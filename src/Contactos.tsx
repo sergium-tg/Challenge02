@@ -25,6 +25,9 @@ const Contactos: React.FC<Props> = ({ initialContactos = [] }) => {
 
   return (
     <div className="losContactos">
+
+      <img src="/img1.jpg" alt="img principal" width={50} />
+
       <h2>Gestión de Contactos</h2>
 
       <NuevoContacto onAdd={agregarContacto} />
