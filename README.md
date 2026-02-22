@@ -8,4 +8,4 @@ Entrega Challenge02, basada en Challenge01 enfocado a PWA.
 
 ## 🛠️ Tecnologías usadas
 * React
-* Typescript
+* TypescriptLink de Netlify: https://tourmaline-hamster-bc04ad.netlify.app/
