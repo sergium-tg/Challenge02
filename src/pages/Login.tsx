@@ -10,7 +10,7 @@ const Login: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
   const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      onLogin(); // Autenticación exitosa
+      onLogin(); 
     } catch (error) {
       alert("Credenciales incorrectas");
     }

@@ -54,7 +54,7 @@ const Tasks: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        {!isOnline && <p style={{ color: 'red' }}>Sin conexión. Acciones deshabilitadas.</p>}
+        {!isOnline && <p style={{ color: 'red' }}>Sin conexión. Operaciones deshabilitadas.</p>}
         
         <IonInput placeholder="Nombre Tarea" value={taskName} onIonChange={e => setTaskName(e.detail.value!)} />
         <IonInput placeholder="Detalle" value={taskDetail} onIonChange={e => setTaskDetail(e.detail.value!)} />

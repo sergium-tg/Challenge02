@@ -12,15 +12,13 @@ const useNetwork = () => {
       setConnectionType(status.connectionType);
     };
     initNetwork();
-
-    // Guardamos la promesa que retorna addListener
+    
     const listenerPromise = Network.addListener("networkStatusChange", (status) => {
       console.log("Network status changed", status);
       setIsOnline(status.connected);
       setConnectionType(status.connectionType);
     });
 
-    // En el cleanup, resolvemos la promesa y le hacemos el remove() al handle
     return () => {
       listenerPromise.then(handle => handle.remove());
     };

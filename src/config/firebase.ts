@@ -14,10 +14,8 @@ const firebaseConfig = {
   measurementId: "G-KR4X4FZE88"
 };
 
-// Inicializamos la App
 const app = initializeApp(firebaseConfig);
 
-// Exportamos con los nombres exactos que usan tus páginas
 export const auth = getAuth(app);
 export const dbFirestore = getFirestore(app);
 export const dbRealtime = getDatabase(app);

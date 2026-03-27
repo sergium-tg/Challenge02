@@ -30,7 +30,6 @@ const Contacts: React.FC = () => {
     await deleteDoc(doc(dbFirestore, 'contacts', id));
   };
 
-  // Función para cerrar sesión
   const handleLogout = async () => {
     await signOut(auth);
   };
@@ -48,7 +47,7 @@ const Contacts: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        {!isOnline && <p style={{ color: 'red' }}>Sin conexión. Acciones deshabilitadas.</p>}
+        {!isOnline && <p style={{ color: 'red' }}>NO hay conexión. Operaciones deshabilitadas.</p>}
         
         <IonInput placeholder="Nombre" value={name} onIonChange={e => setName(e.detail.value!)} />
         <IonInput placeholder="Teléfono" value={phone} onIonChange={e => setPhone(e.detail.value!)} />

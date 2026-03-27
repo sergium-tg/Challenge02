@@ -11,7 +11,7 @@ export class AppDatabase extends Dexie {
   constructor() {
     super('Challenge06DB');
     this.version(1).stores({
-      fruits: '++id, name' // Primary key auto-incrementada
+      fruits: '++id, name'
     });
   }
 }
