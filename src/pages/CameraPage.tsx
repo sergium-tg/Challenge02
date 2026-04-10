@@ -7,9 +7,17 @@ const CameraPage: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader><IonToolbar><IonButtons slot="start"><IonBackButton defaultHref="/home" /></IonButtons><IonTitle>Cámara</IonTitle></IonToolbar></IonHeader>
+      <IonHeader>
+        <IonToolbar>
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/home" />
+          </IonButtons>
+          <IonTitle>Cámara</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      
       <IonContent className="ion-padding">
-        <IonButton expand="block" onClick={takePhoto}>Tomar Foto</IonButton>
+        <IonButton expand="block" onClick={takePhoto}> Tomar Foto </IonButton>
         {photo && (
           <div style={{ marginTop: '20px', textAlign: 'center' }}>
             <img src={photo} alt="Captura" style={{ width: '100%', borderRadius: '8px' }} />
@@ -19,4 +27,5 @@ const CameraPage: React.FC = () => {
     </IonPage>
   );
 };
+
 export default CameraPage;

@@ -15,6 +15,7 @@ const AccelerometerPage: React.FC = () => {
           <IonTitle>Acelerómetro</IonTitle>
         </IonToolbar>
       </IonHeader>
+      
       <IonContent className="ion-padding">
         <h2>Valores de Aceleración:</h2>
         <p><strong>X:</strong> {acceleration.x?.toFixed(1) || 0}</p>

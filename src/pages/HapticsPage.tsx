@@ -9,17 +9,14 @@ const HapticsPage: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonButtons slot="start">
-            <IonBackButton defaultHref="/home" />
-          </IonButtons>
-          <IonTitle>Haptics</IonTitle>
+          <IonButtons slot="start"> <IonBackButton defaultHref="/home" /> </IonButtons>
+          <IonTitle> Haptics </IonTitle>
         </IonToolbar>
       </IonHeader>
+      
       <IonContent className="ion-padding">
         <p>Haz clic en el botón para sentir la vibración en tu dispositivo.</p>
-        <IonButton expand="block" color="warning" onClick={notify}>
-          Vibrar Dispositivo
-        </IonButton>
+        <IonButton expand="block" color="warning" onClick={notify}> Vibrar Dispositivo </IonButton>
       </IonContent>
     </IonPage>
   );

@@ -6,6 +6,7 @@ const LocalNotifPage: React.FC = () => {
   const { scheduleNotification } = useLocalNotif();
 
   return (
+
     <IonPage>
       <IonHeader><IonToolbar><IonButtons slot="start"><IonBackButton defaultHref="/home" /></IonButtons><IonTitle>Notificaciones Locales</IonTitle></IonToolbar></IonHeader>
       <IonContent className="ion-padding">
@@ -15,4 +16,5 @@ const LocalNotifPage: React.FC = () => {
     </IonPage>
   );
 };
+
 export default LocalNotifPage;

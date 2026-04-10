@@ -15,6 +15,7 @@ const GeolocationPage: React.FC = () => {
           <IonTitle>Geolocalización</IonTitle>
         </IonToolbar>
       </IonHeader>
+      
       <IonContent className="ion-padding">
         <IonButton expand="block" onClick={getCurrentLocation}>Obtener Ubicación</IonButton>
         {position && (

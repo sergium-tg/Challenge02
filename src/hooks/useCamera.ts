@@ -10,7 +10,7 @@ export const useCamera = () => {
         quality: 90,
         allowEditing: false,
         resultType: CameraResultType.Uri,
-        source: CameraSource.Camera // Fuerza a abrir la cámara
+        source: CameraSource.Camera
       });
       setPhoto(image.webPath);
     } catch (error) {

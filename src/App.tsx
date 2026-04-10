@@ -30,26 +30,16 @@ import FilesystemPage from './pages/FilesystemPage';
 import LocalNotifPage from './pages/LocalNotifPage';
 import PushNotifPage from './pages/PushNotifPage';
 
-
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/geolocation">
-          <GeolocationPage />
-        </Route>
-        <Route exact path="/accelerometer">
-          <AccelerometerPage />
-        </Route>
-        <Route exact path="/haptics">
-          <HapticsPage />
-        </Route>
-        
+        <Route exact path="/home"> <Home /> </Route>
+        <Route exact path="/geolocation"> <GeolocationPage /> </Route>
+        <Route exact path="/accelerometer"> <AccelerometerPage /> </Route>
+        <Route exact path="/haptics"> <HapticsPage /> </Route>
         <Route exact path="/camera"> <CameraPage /> </Route>
         <Route exact path="/device"> <DevicePage /> </Route>
         <Route exact path="/filesystem"> <FilesystemPage /> </Route>

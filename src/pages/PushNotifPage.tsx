@@ -17,8 +17,7 @@ const PushNotifPage: React.FC = () => {
       </IonHeader>
       
       <IonContent className="ion-padding">
-        <IonButton expand="block" onClick={registerPush}>Registrar Dispositivo</IonButton>
-        
+        <IonButton expand="block" onClick={registerPush}> Registrar Dispositivo </IonButton>
         {token && (
           <div style={{ marginTop: '20px', wordBreak: 'break-all', fontSize: '12px', background: '#e0e0e0', padding: '10px', borderRadius: '5px' }}>
             <strong>Token (Para usar en Firebase):</strong> <br/> {token}

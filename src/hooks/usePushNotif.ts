@@ -14,6 +14,7 @@ export const usePushNotif = () => {
 
     try {
       let permStatus = await PushNotifications.checkPermissions();
+      
       if (permStatus.receive === 'prompt') {
         permStatus = await PushNotifications.requestPermissions();
       }
