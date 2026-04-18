@@ -2,5 +2,5 @@
 
 ## Para probar ## 
 El usuario de pruebas es:
-user@mail.com
-Usuario123*
+**User:** user@mail.com
+**Password:** Usuario123*
