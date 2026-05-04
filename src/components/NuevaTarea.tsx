@@ -20,8 +20,7 @@ const NuevaTarea: React.FC = () => {
 
   const handleGuardar = async () => {
     if (titulo.trim() === '') return;
-
-    // Mapeo: Construimos el JSON respetando los campos propios (sin id, el servidor lo asigna).
+    
     const nuevaTarea = {
       titulo: titulo,
       descripcion: descripcion,

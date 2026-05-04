@@ -24,7 +24,6 @@ const DetalleTarea: React.FC = () => {
       try {
         setLoading(true);
         const response = await axios.get<Tarea>(`${API_URL}/${id}`);
-        // Mapeo: Obtenemos una Tarea única por su ID y la almacenamos en el estado.
         setTarea(response.data);
         setError(null);
       } catch (err) {
@@ -86,7 +85,6 @@ const DetalleTarea: React.FC = () => {
           </IonCardHeader>
           <IonCardContent>
             <p><strong>Descripción:</strong> {tarea.descripcion}</p>
-            {/* Mapeo: Usamos tarea.estado basado en el nuevo formato JSON */}
             <p><strong>Estado:</strong> {tarea.estado ? 'Completada' : 'Pendiente'}</p>
 
             <IonButton

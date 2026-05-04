@@ -15,7 +15,6 @@ const ListaTareas: React.FC = () => {
     try {
       setLoading(true);
       const response = await axios.get<Tarea[]>(API_URL);
-      // Mapeo: Asignamos el array de tareas devuelto por el GET directamente al estado.
       setTareas(response.data);
       setError(null);
     } catch (err) {
@@ -27,7 +26,6 @@ const ListaTareas: React.FC = () => {
   };
 
   useEffect(() => {
-    // GET inicial al montarse el componente
     fetchTareas();
   }, []);
 
@@ -62,7 +60,6 @@ const ListaTareas: React.FC = () => {
         <IonLabel>Tus Tareas</IonLabel>
       </IonListHeader>
       {tareas.map((tarea: Tarea) => (
-        // Pasamos fetchTareas como callback para refrescar la lista si se elimina o edita desde este subcomponente
         <LaTarea key={tarea.id} tarea={tarea} onUpdate={fetchTareas} />
       ))}
     </IonList>

@@ -24,7 +24,6 @@ const EditarTarea: React.FC = () => {
       try {
         setLoadingData(true);
         const response = await axios.get<Tarea>(`${API_URL}/${id}`);
-        // Mapeo: Carga inicial de datos desde GET para rellenar los inputs del formulario
         setForm(response.data);
         setError(null);
       } catch (err) {
@@ -43,7 +42,7 @@ const EditarTarea: React.FC = () => {
     try {
       setSavingData(true);
       setError(null);
-      // Mapeo: Actualizamos el recurso completo enviando el estado modificado al endpoint PUT
+      
       await axios.put(`${API_URL}/${id}`, form, {
         headers: { 'Content-Type': 'application/json' }
       });

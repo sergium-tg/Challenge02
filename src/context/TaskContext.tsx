@@ -4,7 +4,6 @@ import { Tarea } from '../models/Tarea';
 
 const API_URL = 'http://localhost:3000/tareas';
 
-// 1. Definimos una interfaz estricta para lo que el Contexto va a proveer
 interface TaskContextType {
   tareas: Tarea[];
   loading: boolean;
@@ -16,7 +15,6 @@ interface TaskContextType {
   refrescarTareas: () => Promise<void>;
 }
 
-// 2. Asignamos la interfaz al crear el Contexto (evitando el uso de 'any')
 export const TaskContext = createContext<TaskContextType | undefined>(undefined);
 
 export function TaskProvider({ children }: { children: React.ReactNode }) {
@@ -24,7 +22,6 @@ export function TaskProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  // GET - Carga inicial de todas las tareas desde el backend
   const cargarTareas = useCallback(async () => {
     setLoading(true);
     setError(null);
@@ -56,7 +53,6 @@ export function TaskProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  // PUT – Cambiar el estado (toggle)
   const cambiarEstadoTarea = async (id: number) => {
     const tarea = tareas.find(t => t.id === id);
     if (!tarea) return;
@@ -66,7 +62,6 @@ export function TaskProvider({ children }: { children: React.ReactNode }) {
       await axios.put(`${API_URL}/${id}`, tareaActualizada, {
         headers: { 'Content-Type': 'application/json' }
       });
-      // Actualizamos el estado local solo si la petición al servidor fue exitosa
       setTareas(prev => prev.map(t => (t.id === id ? tareaActualizada : t)));
     } catch (err) {
       console.error('Error al cambiar estado:', err);
@@ -74,7 +69,6 @@ export function TaskProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  // PUT – Editar tarea completa
   const editarTarea = async (tareaActualizada: Tarea) => {
     try {
       await axios.put(`${API_URL}/${tareaActualizada.id}`, tareaActualizada, {
@@ -87,7 +81,6 @@ export function TaskProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  // DELETE – Eliminar tarea
   const eliminarTarea = async (id: number) => {
     try {
       await axios.delete(`${API_URL}/${id}`);

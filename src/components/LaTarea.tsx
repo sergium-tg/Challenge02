@@ -31,7 +31,7 @@ const LaTarea: React.FC<LaTareaProps> = ({ tarea, onUpdate }) => {
     try {
       setLoading(true);
       await axios.delete(`${API_URL}/${tarea.id}`);
-      if (onUpdate) onUpdate(); // Refrescar la lista superior
+      if (onUpdate) onUpdate();
     } catch (error) {
       console.error('Error al eliminar:', error);
       alert('Hubo un error al intentar borrar la tarea');
@@ -44,12 +44,11 @@ const LaTarea: React.FC<LaTareaProps> = ({ tarea, onUpdate }) => {
     e.stopPropagation();
     try {
       setLoading(true);
-      // Mapeo: Invertimos el campo booleano 'estado' actual y enviamos toda la estructura por PUT
-      const tareaActualizada = { ...tarea, estado: !tarea.estado };
+            const tareaActualizada = { ...tarea, estado: !tarea.estado };
       await axios.put(`${API_URL}/${tarea.id}`, tareaActualizada, {
         headers: { 'Content-Type': 'application/json' }
       });
-      if (onUpdate) onUpdate(); // Refrescar la lista superior
+      if (onUpdate) onUpdate();
     } catch (error) {
       console.error('Error al actualizar estado:', error);
       alert('Hubo un error al cambiar el estado de la tarea');
